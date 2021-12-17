@@ -1,0 +1,24 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THBS Chat App</title>
+</head>
+<script>
+    function getHomePage() {
+        if (localStorage.getItem('status') === null) {
+            window.location.replace("http://localhost:8080/auth/login");
+        } else {
+            window.location.replace("http://localhost:8080/home");
+        }
+        
+    }
+</script>
+
+<body>
+    <button onclick="getHomePage()">Get Started</button>
+</body>
+
+</html>

@@ -1,1 +1,51 @@
-{{> navBar}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{> navBar}}
+    <div
+        style="background-image: url(https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg); height: 40vh">
+        <form action="sendmsg" method="POST"
+            style="padding-top: 20px;  margin-right: auto; margin-left: auto; width: 50%;">
+            <div class="mb-3">
+                <label style="color: aliceblue; font-size: large;" class="form-label">Enter your Message</label>
+                <input name="msg" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+    <div style="width: 100%; 
+                margin:4px, 4px;
+                padding:4px;
+                height: 100%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+        ">
+        {{#each data as |msg|}}
+        {{#if msg.mymsg}}
+            <div class="container" style="width: fit-content; float: right; border-radius: 20px; padding-top: 10px; border:1px solid black; margin-right: 20px;">
+            <div class="container">
+            <h5>{{msg.sender}}</h5>
+            <p>{{msg.text}}</p>
+            </div>
+            </div>
+            {{else}}
+                <div class="container" style="width: fit-content; float: left;border-radius: 20px; padding-top: 10px; border:1px solid black; margin-left: 20px;">
+                <div class="container">
+                <h5 style="color: red;">{{msg.sender}}</h5>
+                <p>{{msg.text}}</p>
+                </div>
+                </div>
+        {{/if}}
+        {{/each}}
+    </div>
+</body>
+
+</html>
