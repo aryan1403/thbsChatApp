@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     {{> navBar}}
     <div
@@ -21,9 +20,8 @@
             <button type="submit" class="btn btn-primary">Send</button>
         </form>
     </div>
-    <div class="row">
-
-        <div class="col" style="width: 50%; 
+    <div class="col">
+    <div style="width: 100%; 
                 margin:4px, 4px;
                 padding:4px;
                 height: 100%;
@@ -31,41 +29,26 @@
                 overflow-y: auto;
                 text-align:justify;
         ">
-            {{#each data as |msg|}}
-            {{#if msg.mymsg}}
-            <div class="container"
-                style="width: fit-content; float: right; border-radius: 20px; padding-top: 10px; border:1px solid black; margin-right: 20px;">
-                <div class="container">
-                    <h5>{{msg.sender}}</h5>
-                    <p>{{msg.text}}</p>
-                </div>
+        {{#each data as |msg|}}
+        <div class="row" style="width: 100%; padding-top: 10px;">
+        {{#if msg.mymsg}}
+            <div class="container" style="float: right; width: fit-content; border-radius: 20px; padding-top: 10px; border:1px solid black; margin-right: 20px;">
+            <div class="container">
+            <h5>{{msg.sender}}</h5>
+            <p>{{msg.text}}</p>
             </div>
-
-            {{/if}}
-            {{/each}}
-        </div>
-        <div class="col" style="width: 50%; 
-                margin:4px, 4px;
-                padding:4px;
-                height: 100%;
-                overflow-x: hidden;
-                overflow-y: auto;
-                text-align:justify;
-        ">
-            {{#each data as |msg|}}
-            {{#if msg.mymsg}}
-            <div class="container"
-                style="width: fit-content; float: left;border-radius: 20px; padding-top: 10px; border:1px solid black; margin-left: 20px;">
-                <div class="container">
-                    <h5 style="color: red;">{{msg.sender}}</h5>
-                    <p>{{msg.text}}</p>
-                </div>
             </div>
-            {{/if}}
-            {{/each}}
+            {{else}}
+                <div class="container" style="width: fit-content; float: left;border-radius: 20px; padding-top: 10px; border:1px solid black; margin-left: 20px;">
+                <div class="container">
+                <h5 style="color: red;">{{msg.sender}}</h5>
+                <p>{{msg.text}}</p>
+                </div>
+                </div>
+        {{/if}}
         </div>
+        {{/each}}
     </div>
-
+    </div>
 </body>
-
 </html>
