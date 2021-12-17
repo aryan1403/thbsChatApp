@@ -1,0 +1,14 @@
+{
+    "name": "THBS Chat App",
+    "description": "A Chatting Web app",
+    "repository": "https://github.com/aryan1403/thbsChatApp",
+    "success_url": "https://t.me/aryan1403",
+    "stack": "container",
+    "env": {
+        "name": {
+            "description": "Enter your username",
+            "value": "",
+            "required": true
+        }
+    }
+}
